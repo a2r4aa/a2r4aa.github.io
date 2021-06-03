@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    <link rel="shortcut icon" type='image/x-icon' href="/favicon.ico">
+
+
+    <!-- meta -->
+
+
+<title>How to reinstall CentOS,Ubuntu,Debian online | </title>
+
+
+    <meta name="keywords" content="Linux Network Reinstall">
+
+
+
+
+    <!-- OpenGraph -->
+ 
+    <meta name="description" content="I use virmach. If I want to install debain 10, You can see it doesn’t have it.Is there any easy way to install debain 10 or ubuntu 18? The answer is yes. Today I am gonna recommend you a linux script.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to reinstall CentOS,Ubuntu,Debian online">
+<meta property="og:url" content="https://a2r4aa.github.io/How-to-reinstall-CentOS-Ubuntu-Debian-online/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="I use virmach. If I want to install debain 10, You can see it doesn’t have it.Is there any easy way to install debain 10 or ubuntu 18? The answer is yes. Today I am gonna recommend you a linux script.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://a2r4aa.github.io/pictures/Virmach.png">
+<meta property="article:published_time" content="2019-11-07T07:34:48.000Z">
+<meta property="article:modified_time" content="2020-05-27T00:58:03.299Z">
+<meta property="article:author" content="E">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://a2r4aa.github.io/pictures/Virmach.png">
+
+
+    
+<link rel="stylesheet" href="/css/style/main.css">
+ 
+
+
+    
+<link rel="stylesheet" href="/css/style/dark.css">
+
+    
+<script src="/js/darkmode.js"></script>
+
+
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/default.css" media="none" onload="if(getComputedStyle(document.documentElement).getPropertyValue('--color-mode').indexOf('dark')===-1)this.media='all'">
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="/css/highlight/dark.css" media="none" onload="if(getComputedStyle(document.documentElement).getPropertyValue('--color-mode').indexOf('dark')!==-1)this.media='all'">
+        
+    
+
+    
+    
+
+     
+
+    <!-- custom head -->
+
+    
+        <meta name="msvalidate.01" charset="utf-8" content="4C4B868D728A3628124107F6E39C691C" /> <script async src="//pagead2.googlesyndication.com/ pagead/js/adsbygoogle.js"></script> <script> (adsbygoogle = window.adsbygoogle || []).push({ google_ad_client: "pub-3492247823569079", enable_page_level_ads: true }); </script>  
+    
+        <script data-isso="https://comments.ukr.monster/" data-isso-id="thread-id" data-isso-css="true" data-isso-lang="en" data-isso-reply-to-self="false" data-isso-require-author="true" data-isso-require-email="false" data-isso-max-comments-top="10" data-isso-max-comments-nested="5" data-isso-reveal-on-click="5" data-isso-avatar="true" data-isso-avatar-bg="#f0f0f0" data-isso-avatar-fg="#9abf88 #5698c4 #e279a3 #9163b6 ..." data-isso-vote="true" data-isso-vote-levels="" data-isso-feed="false" src="https://comments.kmaa.top/js/embed.min.js"></script> 
+    
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">
+                
+            </span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">
+                        首页
+                    </a>
+                
+                    <a href="/tags/" class="navbar-menu button">
+                        标签
+                    </a>
+                
+                    <a href="/archives/" class="navbar-menu button">
+                        归档
+                    </a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+         
+    <a href="#" class="button" id="b2t" aria-label="Back to Top" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round">
+                    <path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path>
+                </svg>
+            </a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">
+                        首页
+                    </a>
+                
+                    <a href="/tags/" class="dropdown-menu button">
+                        标签
+                    </a>
+                
+                    <a href="/archives/" class="dropdown-menu button">
+                        归档
+                    </a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        How to reinstall CentOS,Ubuntu,Debian online
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2019/11/" class="post-meta__date button">
+    2019-11-07
+</a>
+        
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">Article Directory</div>
+        <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li></ol>
+    </div>
+
+
+<article class="post content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            This article was last updated on &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; days ago, the information described in the article may be outdated.
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2020-05-27"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 120) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <p>I use <a target="_blank" rel="noopener" href="https://billing.virmach.com/">virmach</a>. If I want to install debain 10, You can see it doesn’t have it.<br><img src="/pictures/Virmach.png"><br>Is there any easy way to install debain 10 or ubuntu 18? The answer is yes. Today I am gonna recommend you a linux script. With this script, we can reinstall our system opertion the provider doesn’t give us.</p>
+<p>OK, Here is the scrpit, which is written by a Chinese friend.<br>you can visit his <a target="_blank" rel="noopener" href="https://moeclub.org/2018/04/03/603/">website</a><br>The scrpt still keeps update. So don’t worry it’s too old.<br>But something you need attention! It doesn’t support <strong>OpenVZ</strong> and only <strong>centOS 6.x</strong> is supported when you want to install centos. Remember back up your data before doing this.<br>Let’s see how to use it?<br>the first thing is that you should install some dependences.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#Debian&#x2F;Ubuntu:</span><br><span class="line">apt-get install -y xz-utils openssl gawk file</span><br><span class="line"></span><br><span class="line">#RedHat&#x2F;CentOS:</span><br><span class="line">yum install -y xz openssl gawk file</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#Debian&#x2F;Ubuntu:</span><br><span class="line">apt-get update</span><br><span class="line"></span><br><span class="line">#RedHat&#x2F;CentOS:</span><br><span class="line">yum update</span><br></pre></td></tr></table></figure>
+<p>Second, You donwload the script and give it running permission</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate -qO InstallNET.sh &#39;https:&#x2F;&#x2F;moeclub.org&#x2F;attachment&#x2F;LinuxShell&#x2F;InstallNET.sh&#39; &amp;&amp; chmod a+x InstallNET.sh</span><br></pre></td></tr></table></figure>
+<p>Next, run it with some arguments<br>This is an example for debain 10.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># install debain 9 x64</span><br><span class="line">bash InstallNET.sh -d 9 -v 64 -a</span><br><span class="line"># install centos 6.9 x64</span><br><span class="line">bash InstallNET.sh -c 6.9 -v 64 -a</span><br></pre></td></tr></table></figure>
+<p>Here is the usage.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Usage:</span><br><span class="line">        bash InstallNET.sh      -d&#x2F;--debian [dist-name]</span><br><span class="line">                                -u&#x2F;--ubuntu [dist-name]</span><br><span class="line">                                -c&#x2F;--centos [dist-version]</span><br><span class="line">                                -v&#x2F;--ver [32&#x2F;i386|64&#x2F;amd64]</span><br><span class="line">                                --ip-addr&#x2F;--ip-gate&#x2F;--ip-mask</span><br><span class="line">                                -apt&#x2F;-yum&#x2F;--mirror</span><br><span class="line">                                -dd&#x2F;--image</span><br><span class="line">                                -a&#x2F;-m</span><br><span class="line"></span><br><span class="line"># -apt&#x2F;-yum&#x2F;--mirror : use a coustom image address</span><br><span class="line"># -a&#x2F;-m : auto mode and hand mode. I recommend you use -a</span><br></pre></td></tr></table></figure>
+<p>The last, change its password with yours.Its default passwd is <strong>MoeClub.org</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#The default passwd is MoeClub.org</span><br><span class="line">ssh root@ip</span><br><span class="line"></span><br><span class="line">#cahnge it with yours</span><br><span class="line">passwd root</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>Done!</p>
+<h6 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h6><p><a target="_blank" rel="noopener" href="https://billing.virmach.com/aff.php">Virmach</a><br><a target="_blank" rel="noopener" href="https://moeclub.org/2018/04/03/603/">Debian/Ubuntu/CentOS 网络安装/网络重装/纯净安装 一键脚本</a></p>
+
+    </div>
+    
+    <div class="post__license">
+        <p>
+            <strong>Author: </strong>E
+        </p>
+        <p>
+            <strong>
+                Permalink: 
+            </strong>
+            <a href="https://a2r4aa.github.io/How-to-reinstall-CentOS-Ubuntu-Debian-online/">https://a2r4aa.github.io/How-to-reinstall-CentOS-Ubuntu-Debian-online/</a>
+        </p>
+        
+    </div>
+ 
+    <div class="post-footer__meta">
+    <p>
+        updated at 2020-05-27
+    </p>
+</div> 
+    <div class="post-meta__cats">
+    
+    
+        <a href="/tags/Linux/" class="post-tags__link button"># Linux</a>
+    
+</div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/How-to-Install-Xfce-and-Firefox-on-Debain-10/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            How to Install Xfce and Firefox on Debain 10 Server
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/Debain%E5%AE%89%E8%A3%85docker/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            Debain安装docker
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ads_comment -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3492247823569079"
+     data-ad-slot="2999761721"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2019&nbsp;-&nbsp;2020 <a href="/"></a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+         
+
+ 
+    <script>
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+        ga('create', 'UA-152049817-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+ 
+
+ 
+
+ 
+
+  
+
+
+
+ 
+
+
+    
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>
