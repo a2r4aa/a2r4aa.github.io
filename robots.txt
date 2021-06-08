@@ -1,7 +1,0 @@
-User-agent: * 
-Allow: /
-Allow：/tags/
-Allow: /archives/
-Disallow: /vendors/
-Disallow: /categories/
-Sitemap: https://kmaa.top/sitemap.xml
